@@ -6,7 +6,7 @@
     --text: #550acf;
     --text-light: #000203;
     --border: rgb(60, 56, 56);
-
+    --clear-color: red;
 }
 
 /* reset the page */
@@ -18,7 +18,7 @@ html, body {
     color: #333;
 }
 
-body{
+body {
     background-color: var(--bg);
     color: var(--text);
     display: flex;
@@ -40,7 +40,6 @@ body{
 h1 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
-
 }
 
 form {
@@ -48,6 +47,7 @@ form {
     gap: 0.5rem;
     margin-bottom: 1.5rem;
 }
+
 input[type="text"] {
     flex: 1;
     padding: 0.6rem 0.8rem;
@@ -60,6 +60,7 @@ input[type="text"]:focus {
     border-color: var(--primary);
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
+
 button {
     background-color: var(--primary);
     color: var(--text-light);
@@ -75,16 +76,50 @@ button:hover {
     background-color: var(--primary-hover);
 }
 
-
 ul {
     list-style-type: none;
-
-    margin-bottom: 1.5rem;
+    padding: 0;
+    margin: 0 0 1.5rem 0;
 }
 
-
-
 /* the list design starts here */
+#todo-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+#todo-list li span {
+    flex: 1;
+    word-break: break-word;
+}
+
+#todo-list li.completed span {
+    text-decoration: line-through;
+    color: #999;
+}
+
+#todo-list li input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.delete-btn {
+    background: transparent;
+    color: #999;
+    padding: 0.2rem 0.5rem;
+    font-weight: normal;
+}
+
+.delete-btn:hover {
+    color: red;
+    background: transparent;
+}
+
 .todo-footer {
     display: flex;
     justify-content: space-between;
@@ -93,15 +128,14 @@ ul {
     color: var(--text-light);
 }
 
-#clear-btn{
-    background : transparent;
+#clear-btn {
+    background: transparent;
     color: var(--text-light);
     padding: 0.3rem 0.6rem;
-    
 }
 
-#clear-btn:hover{
-    background-color: var(--primary-hover);
-    color: var(--text-light);
+#clear-btn:hover {
+    background-color: var(--clear-color);
+    color: #fff;
 }
 /* the list design ends here */
